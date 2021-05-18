@@ -7,32 +7,26 @@
 
 <div class=main>
 
-
 <h1>Welcome to YES bank</h1>
-<h3>{{aim}}</h3>
-
-</div>
-</div>
+<h3>Registration Form</h3>
 
 
-<div class="container1">
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
+            <input type="text" name="" id="uname" placeholder="enter username" [(ngModel)]="uname">   <br> <br>
 
             <input type="text" id="acnotext" placeholder="enter account number" [(ngModel)]="acno">   <br> <br>
-       <!-- <input type="text" name="" id="uname" placeholder="enter username">                       <br> <br> -->
+           
             <input type="password" id="pwdtext" placeholder="enter password" [(ngModel)]="pswd">          <br> <br>
-            <button class="btn btn-success" (click)="login()">Login</button>                          <br> <br>
+      
 
-            <a class="linktxt" href="#"> Forgot Password? </a>  
-            <!-- routerlink="register" is used instesd of href to go another page. here register is the path.-->
+           
             <div class="line"></div>
 
             <button class="btn btn-danger" (click)="register()">Create New Account</button>          
 
-   
         </div>
+    </div>
+
+        
         <div class="col-4"></div>
     </div>
 </div>
