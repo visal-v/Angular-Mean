@@ -20,10 +20,10 @@
         <div class="col-4"></div>
         <div class="col-4">
 
-            <input type="text" id="acnotext" placeholder="enter account number" [value]="acno" #accno>   <br> <br>
+            <input type="text" id="acnotext" placeholder="enter account number" [(ngModel)]="acno">   <br> <br>
             <input type="text" name="" id="uname" placeholder="enter username">       <br> <br>
-            <input type="text" id="pwdtext" placeholder="enter password"  #pswd>                 <br> <br>
-            <button class="btn btn-success" (click)="login(accno,pswd)">login</button>          
+            <input type="text" id="pwdtext" placeholder="enter password" [(ngModel)]="pswd">                 <br> <br>
+            <button class="btn btn-success" (click)="login()">login</button>          
    
         </div>
         <div class="col-4"></div>

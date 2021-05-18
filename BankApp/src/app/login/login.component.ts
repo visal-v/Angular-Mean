@@ -39,12 +39,12 @@ export class LoginComponent implements OnInit {
 
 
 
-  login(a:any,p:any) {
+  login() {
 
     //console.log(a);
     //alert("Login Clicked")
-    var acno = a.value;
-    var pswd = p.value;
+    var acno = this.acno;
+    var pswd = this.pswd;
     let users = this.accountDetails;
 
     if (acno in users) {
