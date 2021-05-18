@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+
+
+<div class=main>
+
+
+<h1>Welcome to YES bank</h1>
+<h3>{{aim}}</h3>
+
+</div>
+</div>
+
+
+<div class="container1">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+            <input type="text" id="acnotext" placeholder="enter account number" [value]="acno" #accno>   <br> <br>
+            <input type="text" name="" id="uname" placeholder="enter username">       <br> <br>
+            <input type="text" id="pwdtext" placeholder="enter password"  #pswd>                 <br> <br>
+            <button class="btn btn-success" (click)="login(accno,pswd)">login</button>          
+   
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
