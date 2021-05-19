@@ -5,34 +5,28 @@
 
 
 
-<div class=main>
+<div class="main">
+
+<h1>Welcome to YES bank <br>
+<h3>{{aim}}</h3></h1> <br>
 
 
-<h1>Welcome to YES bank</h1>
-<h3>{{aim}}</h3>
+<form (ngSubmit)="login()">
 
+<input type="text" id="acnotext" class="text" placeholder="Account Number" name="acno" [(ngModel)]="acno">  <br><br>
+<input type="password" id="pwdtext" class="text" placeholder="Password" name="pswd" [(ngModel)]="pswd">  <br><br>
+<input type="submit" value="Log-In" class="btn btn-success">  <br>
+
+<a href="#" class="linktxt"> Forgot password? </a>
+
+<div class="line"></div>
+
+<input type="button" value="Create New Account" class="btn btn-danger" (click)="register()">
+
+</form>
 </div>
 </div>
 
-
-<div class="container1">
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-
-            <input type="text" id="acnotext" placeholder="enter account number" [(ngModel)]="acno">   <br> <br>
-       <!-- <input type="text" name="" id="uname" placeholder="enter username">                       <br> <br> -->
-            <input type="password" id="pwdtext" placeholder="enter password" [(ngModel)]="pswd">          <br> <br>
-            <button class="btn btn-success" (click)="login()">Login</button>                          <br> <br>
-
-            <a class="linktxt" href="#"> Forgot Password? </a>  
-            <!-- routerlink="register" is used instesd of href to go another page. here register is the path.-->
-            <div class="line"></div>
-
-            <button class="btn btn-danger" (click)="register()">Create New Account</button>          
-
-   
-        </div>
-        <div class="col-4"></div>
-    </div>
+<div class="col-4"></div>
+</div>
 </div>
