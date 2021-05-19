@@ -8,10 +8,12 @@
 
                 <h1>Deposit Form</h1> <br>
 
-            <form action="#">
+            <form (ngSubmit)="deposit()">
 
-             <input type="text" name="" id="log" class="text" placeholder="Account Number">   <br><br>
-             <input type="text" name="" id="amo" class="text" placeholder="Amount">   <br><br>
+             <input type="text" name="" id="log" class="text" placeholder="Account Number" name="accno" [(ngModel)]="dAccno">   <br><br>
+
+             <input type="password" id="pass" class="text" placeholder="Password" name="pswd" [(ngModel)]="dPswd">   <br><br>
+             <input type="text" name="" id="amo" class="text" placeholder="Amount"  name="amount" [(ngModel)]="dAmount">   <br><br>
              <input type="submit" name="" value="Deposit" class="button buttonl butefct">   <br><br>
 
             </form>
@@ -34,13 +36,13 @@
 
                 <h1>Withdraw Form</h1> <br>
 
-        <form action="#">
+        <form (ngSubmit)="withdraw()">
 
-             <input type="text" name="" id="log" class="text" placeholder="Account Number">   <br><br>
+             <input type="text" id="log" class="text" placeholder="Account Number" name="accno" [(ngModel)]="wAccno">   <br><br>
 
-             <input type="password" name="" id="pass" class="text" placeholder="Password">   <br><br>
-             <input type="text" name="" id="amo" class="text" placeholder="Amount">   <br><br>
-             <input type="submit" name="" value="Withdrawal" class="button butefct">   <br><br>
+             <input type="password" id="pass" class="text" placeholder="Password" name="pswd" [(ngModel)]="wPswd">   <br><br>
+             <input type="text" id="amo" class="text" placeholder="Amount" name="amount" [(ngModel)]="wAmount">   <br><br>
+             <input type="submit" name="" value="Withdraw" class="button butefct">   <br><br>
 
         </form>
         </div>
