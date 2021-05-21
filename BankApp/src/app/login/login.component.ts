@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -11,45 +12,46 @@ export class LoginComponent implements OnInit {
 
   aim="your perfect banking partner";
 
-  acno="enter you account no";
+  // acno="enter you account no";
 
-  pswd="";
+  // pswd="";
+
+
+  loginForm = this.fb.group({
+    acno: ['', [Validators.required, Validators.minLength(4), Validators.pattern('[0-9]*')]],
+    pswd: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]*')]]
+  })
 
 
 
-  constructor(private router:Router , private dataService:DataService) { }
+  constructor(private router:Router , private dataService:DataService , private fb:FormBuilder) { }
 
   ngOnInit(): void {
   }
 
 
-// accnoChange(event:any) {
-//   this.accno=event.target.value;
-//   console.log(this.accno);  
-// }
-
-
-// pswdChange(event:any) {
-//   this.pswd=event.target.value;
-//   console.log(this.pswd);
-// }
-
 
 
   login() {
 
-    //console.log(a);
-    //alert("Login Clicked")
-    var acno = this.acno;
-    var pswd = this.pswd;
+    if(this.loginForm.valid) {
+      
+    var acno = this.loginForm.value.acno;
+    var pswd = this.loginForm.value.pswd;
 
     const result = this.dataService.login(acno,pswd)
 
     if (result) {
       alert("Login Succesful");
       this.router.navigateByUrl("dashboard");
-    }
+     }
+   }
+   else {
+     alert("Invalid Form");
+   } 
   }
+
+
 
   register() {
     this.router.navigateByUrl("register");

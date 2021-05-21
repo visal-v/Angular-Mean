@@ -8,15 +8,18 @@
 <div class=main>
 
 <h1>Welcome to YES bank</h1>
-<h3>Registration Form</h3>
+<h3>Registration Form</h3>   <br>
 
-<form (ngSubmit)="register()">
-            <input type="text" name="uname" id="uname" placeholder="enter username" [(ngModel)]="uname">   <br> <br>
-
-            <input type="text" name="accno" id="acnotext" placeholder="enter account number" [(ngModel)]="acno">   <br> <br>
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+    
+            <input type="text" name="uname" id="uname" placeholder="enter username" formControlName="uname"> <br>
+            <div *ngIf="(registerForm.get('uname')?.touched || registerForm.get('uname')?.dirty) && registerForm.get('uname')?.errors" class="error">Invalid User-Name</div> <br>
+            
+            <input type="text" name="accno" id="acnotext" placeholder="enter account number" formControlName="acno">  <br>
+            <div *ngIf="(registerForm.get('acno')?.touched || registerForm.get('acno')?.dirty) && registerForm.get('acno')?.errors" class="error">Invalid Account-Number</div> <br>
            
-            <input type="password" name="pswd" id="pwdtext" placeholder="enter password" [(ngModel)]="pswd">          <br> <br>
-      
+            <input type="password" name="pswd" id="pwdtext" placeholder="enter password" formControlName="pswd">   <br>
+            <div *ngIf="(registerForm.get('pswd')?.touched || registerForm.get('pswd')?.dirty) && registerForm.get('pswd')?.errors" class="error">Invalid Password</div> <br>
 
             <div class="line"></div>
 

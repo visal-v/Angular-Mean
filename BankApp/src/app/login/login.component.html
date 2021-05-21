@@ -11,10 +11,14 @@
 <h3>{{aim}}</h3></h1> <br>
 
 
-<form (ngSubmit)="login()">
+<form  [formGroup]="loginForm" (ngSubmit)="login()">
 
-<input type="text" id="acnotext" class="text" placeholder="Account Number" name="acno" [(ngModel)]="acno">  <br><br>
-<input type="password" id="pwdtext" class="text" placeholder="Password" name="pswd" [(ngModel)]="pswd">  <br><br>
+<input type="text" id="acnotext" class="text" placeholder="Account Number" name="acno" formControlName="acno">  <br>
+<div *ngIf="(loginForm.get('acno')?.touched || loginForm.get('acno')?.dirty) && loginForm.get('acno')?.errors" class="error">Invalid Account-Number</div> <br>
+
+<input type="password" id="pwdtext" class="text" placeholder="Password" name="pswd" formControlName="pswd">  <br>
+<div *ngIf="(loginForm.get('pswd')?.touched || loginForm.get('pswd')?.dirty) && loginForm.get('pswd')?.errors" class="error">Invalid Password</div> <br>
+
 <input type="submit" value="Log-In" class="btn btn-success">  <br>
 
 <a href="#" class="linktxt"> Forgot password? </a>
